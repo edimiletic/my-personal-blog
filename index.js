@@ -10,7 +10,6 @@ var postContent;
 
 let titles=[];
 let posts= [];
-
 let content = 0;
 
 app.use(bodyParser.urlencoded({extended:true}));

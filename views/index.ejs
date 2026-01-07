@@ -1,6 +1,6 @@
 <%- include("partials/header.ejs") %>
 <%- include("partials/hero.ejs") %>
-<div class="container mb-5 pt-4">
+<div class="container  py-5">
     <% if(locals.cnt == 0){ %>
         <!-- Empty State -->
         <div class="row justify-content-center">
@@ -53,7 +53,7 @@
     $(document).ready(function() {
         $('.post-title').click(function(e) {
             e.preventDefault();
-            var titleText = $(this).data('title') || $(this).text().trim();
+            var titleText = $(this).data('title');
             window.location.href = '/details/' + encodeURIComponent(titleText);
         });
     });
