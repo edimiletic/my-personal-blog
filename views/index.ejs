@@ -31,14 +31,12 @@
                             <p class="card-text text-muted flex-grow-1">
                                 <%= Posts[i].substring(0, 120) %><%= Posts[i].length > 120 ? '...' : '' %>
                             </p>
-                            <a href="#" class="btn btn-outline-primary btn-sm mt-auto post-title" data-title="<%= Titles[i] %>">
+
+                        </div>
+                        <div class="card-footer d-flex flex-column bg-transparent border-top-0">
+                                <a href="#" class="btn btn-outline-primary btn-sm mt-auto post-title" data-title="<%= Titles[i] %>">
                                 Read More →
                             </a>
-                        </div>
-                        <div class="card-footer bg-transparent border-top-0">
-                            <small class="text-muted">
-                                <i class="bi bi-clock"></i> Just now
-                            </small>
                         </div>
                     </div>
                 </div>

@@ -27,19 +27,17 @@ app.get("/write-post", (req, res)=>{
 })
 
 app.post("/create",(req,res)=>{
-
  if(req.body.title && req.body.content){
-    details = true;
     content++;
     postTitle =req.body.title;
     titles.push(postTitle);
     
     postContent = req.body.content;
     posts.push(postContent);
-    // console.log(postTitle + postContent)   ;
-     console.log(titles.length)  ;
-    res.render("details.ejs",{title: postTitle, content: postContent, cnt: content, dts: details});
-    // res.sendStatus(201);
+
+    console.log(titles.length)  ;
+    res.render("details.ejs",{title: postTitle, content: postContent});
+    res.status(201);
  }
  else{
     res.status(400);
@@ -75,25 +73,21 @@ app.post("/update", (req,res)=>{
     }else{
         res.status(404).send("Post not found")
     }
-
 })
 
 app.post("/delete", (req,res)=>{
-    console.log(req.body)
     const deleteTitle = req.body.title;
-    const indexTitle = titles.indexOf(deleteTitle);
-    const indexContent = posts.indexOf(deleteTitle);
+    const index = titles.indexOf(deleteTitle);
 
-    if(indexTitle !== -1){
-    titles.splice(indexTitle, 1);
-    posts.splice(indexContent, 1);
+    if(index !== -1){
+    titles.splice(index, 1);
+    posts.splice(index, 1);
     content--;
 
     res.redirect("/")
 }else{
     res.status(404).send("post not found")
 }
-
 })
 
 app.listen(port,()=>{
